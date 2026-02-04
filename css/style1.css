@@ -1,0 +1,240 @@
+/* ===== Google Font ===== */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+/* ===== CSS Variables (OPTION 1: Modern Academic Blue) ===== */
+:root {
+    --primary: #0B3C5D;
+    --secondary: #1E5F8A;
+    --accent: #F4C430;
+
+    --bg-main: #F5F7FA;
+    --bg-card: #FFFFFF;
+
+    --text-main: #1F2933;
+    --text-muted: #5A6B7B;
+}
+
+/* ===== Global ===== */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: 'Inter', sans-serif;
+    background: var(--bg-main);
+    color: var(--text-main);
+    line-height: 1.7;
+}
+
+/* ===== Header ===== */
+header {
+    background: linear-gradient(135deg, var(--primary), var(--secondary));
+    color: white;
+    padding: 45px 20px 35px;
+}
+
+.header-container {
+    max-width: 1100px;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+    flex-wrap: wrap;
+}
+
+.header-photo img {
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    border: 5px solid rgba(255,255,255,0.9);
+    object-fit: cover;
+    box-shadow: 0 12px 28px rgba(0,0,0,0.3);
+}
+
+.header-info {
+    max-width: 600px;
+}
+
+.header-info h1 {
+    margin: 0 0 8px;
+    font-size: 2.3rem;
+    font-weight: 700;
+}
+
+.header-info .designation {
+    margin: 0 0 12px;
+    font-size: 1.05rem;
+    opacity: 0.95;
+}
+
+.header-info .profile-links a {
+    color: var(--accent);
+    font-weight: 500;
+    text-decoration: none;
+}
+
+.header-info .profile-links a:hover {
+    text-decoration: underline;
+}
+
+/* ===== Navigation ===== */
+nav {
+    background: #20B2AA; /* Light Sea Green */
+    padding: 14px;
+    text-align: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+}
+
+nav a {
+    color: #ffffff;
+    margin: 0 16px;
+    text-decoration: none;
+    font-weight: 600;
+    position: relative;
+}
+
+nav a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    background: #F4C430; /* Accent gold underline */
+    left: 0;
+    bottom: -6px;
+    transition: width 0.3s ease;
+}
+
+nav a:hover::after {
+    width: 100%;
+}
+
+/* ===== Main Sections ===== */
+section {
+    max-width: 1050px;
+    margin: 45px auto;
+    padding: 40px;
+    background: var(--bg-card);
+    border-radius: 16px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.08);
+    animation: fadeIn 0.6s ease-in;
+    position: relative;
+}
+
+/* Accent Line */
+section::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 5px;
+    width: 100%;
+    border-radius: 16px 16px 0 0;
+    background: linear-gradient(90deg, var(--primary), var(--accent));
+}
+
+/* ===== Headings ===== */
+h2 {
+    font-size: 1.7rem;
+    color: var(--primary);
+    margin-bottom: 18px;
+    position: relative;
+}
+
+h2::after {
+    content: '';
+    position: absolute;
+    width: 70px;
+    height: 3px;
+    background: linear-gradient(90deg, var(--primary), var(--accent));
+    left: 0;
+    bottom: -8px;
+}
+
+/* ===== Lists ===== */
+ul, ol {
+    padding-left: 20px;
+}
+
+li {
+    margin-bottom: 10px;
+}
+
+/* ===== Links ===== */
+a {
+    color: var(--secondary);
+    text-decoration: none;
+}
+
+a:hover {
+    color: var(--primary);
+}
+
+/* ===== Social Media Buttons ===== */
+.social-buttons {
+    margin-top: 20px;
+}
+
+.social-buttons .btn {
+    display: inline-block;
+    padding: 10px 22px;
+    margin: 8px;
+    border-radius: 30px;
+    font-weight: 600;
+    color: white;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    box-shadow: 0 8px 18px rgba(0,0,0,0.25);
+}
+
+.social-buttons .btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 25px rgba(0,0,0,0.35);
+}
+
+.social-buttons .linkedin { background: #0A66C2; }
+.social-buttons .github   { background: #24292E; }
+.social-buttons .scholar  { background: #4285F4; }
+.social-buttons .orcid    { background: #A6CE39; }
+
+/* ===== Footer ===== */
+footer {
+    background: linear-gradient(135deg, var(--primary), var(--secondary));
+    color: white;
+    text-align: center;
+    padding: 20px;
+    font-size: 0.9rem;
+    margin-top: 60px;
+    box-shadow: 0 -4px 15px rgba(0,0,0,0.15);
+}
+
+/* ===== Animations ===== */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(15px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 768px) {
+    .header-container {
+        text-align: center;
+    }
+
+    .header-info {
+        text-align: center;
+    }
+}
+.about-me {
+    text-align: justify;
+    text-justify: inter-word;
+}
